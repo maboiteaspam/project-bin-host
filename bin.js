@@ -20,9 +20,12 @@ var runAsRoot = function(then){
       // then re run node with UAC control for admin privileges
       var elevate = require('node-windows').elevate;
       var args = process.argv;
+      args.shift();
+      args.unshift('"'+process.execPath+'"');
       args.push(' --elevated');
-      elevate(args.join(' '));
-      process.exit(1);
+      elevate(args.join(' '), function(){
+        process.exit(1);
+      });
     }else{
       // otherwise it s linux friendly system
       // ensure process gid / uid
