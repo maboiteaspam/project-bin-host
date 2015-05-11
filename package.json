@@ -2,7 +2,6 @@
   "name": "node-project-host",
   "version": "1.0.0",
   "description": "Bin helper to load / unload a file of host",
-  "main": "index.js",
   "bin": {
     "project-host":"bin.js"
   },

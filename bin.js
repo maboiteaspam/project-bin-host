@@ -14,15 +14,12 @@ var main = function(){
     .option('--elevated', 'Internal option')
     .description('Load given file into your system')
     .action(function(file){
-      var done = function(){
-        console.log(arguments);
-      };
+      var done = function(){};
       fs.createReadStream(file, 'utf8')
         .pipe(split())
         .pipe(through(online))
         .on('close', done)
         .on('error', done);
-
 
       function online (line) {
         var matches = /^\s*?([^#]+?)\s+([^#]+?)$/.exec(line)
@@ -42,9 +39,7 @@ var main = function(){
     .option('--elevated', 'Internal option')
     .description('Unload given file into your system')
     .action(function(file){
-      var done = function(){
-        console.log(arguments);
-      };
+      var done = function(){};
       fs.createReadStream(file, 'utf8')
         .pipe(split())
         .pipe(through(online))
