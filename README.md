@@ -1,4 +1,4 @@
-# node-project-host
+# project-bin-host
 
 Help to manage per project host file.
 
@@ -9,7 +9,7 @@ It will also flush your host cache when ran under windows.
 ## Install
 
 ```
-npm i node-project-host -g
+npm i project-host -g
 ```
 
 ## Usage
