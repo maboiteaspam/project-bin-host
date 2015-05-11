@@ -45,6 +45,7 @@
     .description('Load given file into your system')
     .action(function(file){
       runAsRoot(function(){
+        file = file || '.hostile';
         var done = function(){};
         fs.createReadStream(file, 'utf8')
           .pipe(split())
@@ -72,6 +73,7 @@
     .description('Unload given file into your system')
     .action(function(file){
       runAsRoot(function(){
+        file = file || '.hostile';
         var done = function(){};
         fs.createReadStream(file, 'utf8')
           .pipe(split())
