@@ -2,6 +2,7 @@
 
 var pkg = require('./package.json');
 var fs = require('fs');
+var path = require('path');
 var through = require('through');
 var split = require('split');
 var hostile = require('hostile');
@@ -10,7 +11,7 @@ var program = require('commander');
 program.version(pkg.version);
 
 
-var runAsRoot = function(then){
+var runAsRoot = function(file, then){
   if(process.argv.indexOf('--elevated') > -1){
     then();
   } else {
@@ -23,6 +24,7 @@ var runAsRoot = function(then){
       args.shift();
       args.unshift(process.execPath);
       args.forEach(function(a,i){
+        if(file===a) a = path.resolve(file);// privilege elevation on windows, won t restore cwd, needs to send only absolute path.
         if(a.match(/\s/) ) args[i] = '"'+a+'"';
       });
       args.push('--elevated');
@@ -49,8 +51,8 @@ program.command('load [file]')
   .option('--elevated', 'Internal option')
   .description('Load given file into your system')
   .action(function(file){
-    runAsRoot(function(){
-      file = file || '.hostile';
+    file = file || '.hostile';
+    runAsRoot(file,function(){
       var done = function(){};
       fs.createReadStream(file, 'utf8')
         .pipe(split())
@@ -77,8 +79,8 @@ program.command('unload [file]')
   .option('--elevated', 'Internal option')
   .description('Unload given file into your system')
   .action(function(file){
-    runAsRoot(function(){
-      file = file || '.hostile';
+    file = file || '.hostile';
+    runAsRoot(file,function(){
       var done = function(){};
       fs.createReadStream(file, 'utf8')
         .pipe(split())
