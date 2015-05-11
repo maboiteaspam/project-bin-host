@@ -20,6 +20,8 @@ var runAsRoot = function(then){
       // then re run node with UAC control for admin privileges
       var elevate = require('node-windows').elevate;
       var args = process.argv;
+      args.shift();
+      args.unshift('"'+process.execPath+'"');
       args.forEach(function(a,i){
         if(a.match(/\s/) ) args[i] = '"'+a+'"';
       });
