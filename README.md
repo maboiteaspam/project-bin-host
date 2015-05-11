@@ -4,6 +4,8 @@ Help to manage per project host file.
 
 Compatible both windows / linux, see below.
 
+It will also flush your host cache when ran under windows.
+
 ## Install
 
 ```
@@ -46,9 +48,9 @@ project-host unload hostfile.txt
 
 ##### Windows
 
-Windows can t be automated using this software as it will throw an UAC query. 
+Windows can t be automated using this software as it will throw an UAC query.
 
-The user must then answer yes / no.
+The user must then click yes / no.
 
 If you d like to automate a process under windows that requires administrator privileges, please check
 

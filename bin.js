@@ -16,7 +16,7 @@ var runAsRoot = function(file, then){
     then();
   } else {
     // when it s windows
-    if(process.platform.match(/win/) && process.arch.match(/32/) ){
+    if(process.platform.match(/win/) ){
       // ensure the program is not started ad admin yet
       // then re run node with UAC control for admin privileges
       var elevate = require('node-windows').elevate;
@@ -53,12 +53,19 @@ program.command('load [file]')
   .action(function(file){
     file = file || '.hostile';
     runAsRoot(file,function(){
-      var done = function(){};
+      var done = function(){
+        if(process.platform.match(/win/) ){
+          require('child_process').exec('ipconfig /flushdns');
+        }
+      };
+      var error = function(e){
+        console.error(e);
+      };
       fs.createReadStream(file, 'utf8')
         .pipe(split())
         .pipe(through(online))
         .on('close', done)
-        .on('error', done);
+        .on('error', error);
 
       function online (line) {
         var matches = /^\s*?([^#]+?)\s+([^#]+?)$/.exec(line)
@@ -81,12 +88,19 @@ program.command('unload [file]')
   .action(function(file){
     file = file || '.hostile';
     runAsRoot(file,function(){
-      var done = function(){};
+      var done = function(){
+        if(process.platform.match(/win/) ){
+          require('child_process').exec('ipconfig /flushdns');
+        }
+      };
+      var error = function(e){
+        console.error(e);
+      };
       fs.createReadStream(file, 'utf8')
         .pipe(split())
         .pipe(through(online))
         .on('close', done)
-        .on('error', done);
+        .on('error', error);
 
       function online (line) {
         var matches = /^\s*?([^#]+?)\s+([^#]+?)$/.exec(line)
