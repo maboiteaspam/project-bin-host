@@ -14,6 +14,21 @@ npm i node-project-host -g
 
 Description
 ```
+  Usage: bin [options] [command]
+
+
+  Commands:
+
+    load [options] [file]    Load given file into your system. file=.hostile
+    unload [options] [file]  Unload given file into your system. file=.hostile
+    *                        Help
+
+  Options:
+
+    -h, --help     output usage information
+    -V, --version  output the version number
+
+
 
 ```
 
@@ -31,7 +46,7 @@ project-host unload hostfile.txt
 
 ##### Windows
 
-Windows can t be automated using this osftware as it will throw an UAC query. 
+Windows can t be automated using this software as it will throw an UAC query. 
 
 The user must then answer yes / no.
 
