@@ -1,0 +1,21 @@
+{
+  "name": "node-project-host",
+  "version": "1.0.0",
+  "description": "Bin helper to load / unload a file of host",
+  "main": "index.js",
+  "bin": {
+    "project-host":"bin.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "maboiteaspam",
+  "license": "WTF",
+  "dependencies": {
+    "commander": "^2.8.1",
+    "hostile": "^1.0.1",
+    "is-root": "^1.0.0",
+    "split": "^0.3.3",
+    "through": "^2.3.7"
+  }
+}

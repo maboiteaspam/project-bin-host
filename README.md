@@ -1,0 +1,54 @@
+# node-project-host
+
+Help to manage per project host file.
+
+Compatible both windows / linux, see below.
+
+## Install
+
+```
+npm i node-project-host -g
+```
+
+## Usage
+
+Description
+```
+
+```
+
+Load file of entries
+
+```
+project-host load hostfile.txt
+```
+
+Unload file of entries
+```
+project-host unload hostfile.txt
+```
+
+
+##### Windows
+
+Windows can t be automated using this osftware as it will throw an UAC query. 
+
+The user must then answer yes / no.
+
+If you d like to automate a process under windows that requires administrator privileges, please check
+
+```
+runas /profile /USERNAME:Administrator WHATVEVER.cmd
+```
+
+Note also that because of the clunky nature of the solution to trigger UAC, it is not possible to get standard input / output feed from rooted process.
+
+This means it is not possible to provide user feedback about command completion success or failure. : /
+
+#### Linux
+
+Please run the command with sudo.
+
+## Tests
+
+There are no tests as i don t know how to do with that UAC stuff.
