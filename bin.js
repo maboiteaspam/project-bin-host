@@ -23,7 +23,8 @@ var runAsRoot = function(then){
       args.forEach(function(a,i){
         if(a.match(/\s/) ) args[i] = '"'+a+'"';
       });
-      args.push(' --elevated');
+      args.push('--elevated');
+      console.log(args.join(' '));
       elevate(args.join(' '));
     }else{
       // otherwise it s linux friendly system
