@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Bin helper to load / unload a file of host",
   "bin": {
-    "project-host":"bin.js"
+    "project-host": "bin.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,6 +14,7 @@
     "commander": "^2.8.1",
     "hostile": "^1.0.1",
     "is-root": "^1.0.0",
+    "node-windows": "^0.1.7",
     "split": "^0.3.3",
     "through": "^2.3.7"
   }
