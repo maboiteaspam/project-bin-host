@@ -21,7 +21,7 @@ var runAsRoot = function(then){
       var elevate = require('node-windows').elevate;
       var args = process.argv;
       args.shift();
-      args.unshift('"'+process.execPath+'"');
+      args.unshift(process.execPath);
       args.forEach(function(a,i){
         if(a.match(/\s/) ) args[i] = '"'+a+'"';
       });
