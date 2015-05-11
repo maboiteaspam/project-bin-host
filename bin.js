@@ -24,9 +24,7 @@ var runAsRoot = function(then){
         if(a.match(/\s/) ) args[i] = '"'+a+'"';
       });
       args.push(' --elevated');
-      elevate(args.join(' '), function(){
-        process.exit(1);
-      });
+      elevate(args.join(' '));
     }else{
       // otherwise it s linux friendly system
       // ensure process gid / uid
@@ -37,7 +35,7 @@ var runAsRoot = function(then){
         console.error('You must be root to run this command:\n');
         console.error('\tsudo '+process.argv.join(' '));
         console.error(' ');
-        process.exit(1);
+        process.exit();
       }
     }
   }
