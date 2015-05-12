@@ -9,14 +9,14 @@ It will also flush your host cache when ran under windows.
 ## Install
 
 ```
-npm i project-host -g
+npm i project-bin-host -g
 ```
 
 ## Usage
 
 Description
 ```
-  Usage: bin [options] [command]
+  Usage: project-host [options] [command]
 
 
   Commands:
