@@ -1,10 +1,12 @@
 # project-bin-host
 
-Help to manage per project host file.
+Manage per project host file.
 
-Compatible both windows / linux, see below.
+Compatible windows / linux / macos, see below.
 
-It will also flush your host cache when ran under windows.
+On windows it flush the cache and run UAC query.
+
+On linux / macos it will require ```sudo``` and root permissions.
 
 ## Install
 
@@ -22,14 +24,13 @@ Description
   Commands:
 
     load [options] [file]    Load given file into your system. file=.hostile
-    unload [options] [file]  Unload given file into your system. file=.hostile
+    unload [options] [file]  Unload given file from your system. file=.hostile
     *                        Help
 
   Options:
 
     -h, --help     output usage information
     -V, --version  output the version number
-
 ```
 
 Load file of entries
@@ -45,6 +46,8 @@ project-host unload hostfile.txt
 
 
 ## Host File
+
+Add ```.hostile``` file at root folder of your project.
 
 ```
 # .hostile
