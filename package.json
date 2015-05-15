@@ -1,6 +1,6 @@
 {
   "name": "project-bin-host",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bin helper to load / unload a file of host",
   "bin": {
     "project-host": "bin.js"
