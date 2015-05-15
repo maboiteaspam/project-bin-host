@@ -71,7 +71,7 @@ please check
 runas /profile /USERNAME:Administrator WHATVEVER.cmd
 ```
 
-And feross/hostile
+And https://github.com/feross/hostile
 
 Note also that because of the clunky nature of the solution to trigger UAC, it is not possible to get standard input / output feed from rooted process.
 
