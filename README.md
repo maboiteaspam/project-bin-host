@@ -9,14 +9,14 @@ It will also flush your host cache when ran under windows.
 ## Install
 
 ```
-npm i project-host -g
+npm i project-bin-host -g
 ```
 
 ## Usage
 
 Description
 ```
-  Usage: bin [options] [command]
+  Usage: project-host [options] [command]
 
 
   Commands:
@@ -63,11 +63,15 @@ Windows can t be automated using this software as it will throw an UAC query.
 
 The user must then click yes / no.
 
-If you d like to automate a process under windows that requires administrator privileges, please check
+If you d like to automate a process under windows that requires administrator privileges, 
+
+please check
 
 ```
 runas /profile /USERNAME:Administrator WHATVEVER.cmd
 ```
+
+And feross/hostile
 
 Note also that because of the clunky nature of the solution to trigger UAC, it is not possible to get standard input / output feed from rooted process.
 
