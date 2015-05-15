@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Project-bin-host : Per project .host(ile) files">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Project-bin-host</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/maboiteaspam/project-bin-host">View on GitHub</a>
+
+          <h1 id="project_title">Project-bin-host</h1>
+          <h2 id="project_tagline">Per project .host(ile) files</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/maboiteaspam/project-bin-host/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/maboiteaspam/project-bin-host/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="project-bin-host" class="anchor" href="#project-bin-host" aria-hidden="true"><span class="octicon octicon-link"></span></a>project-bin-host</h1>
+
+<p>Manage per project host file.</p>
+
+<p>Compatible windows / linux / macos, see below.</p>
+
+<p>On windows it flush the cache and run UAC query.</p>
+
+<p>On linux / macos it will require <code>sudo</code> and root permissions.</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<pre><code>npm i project-bin-host -g
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Description</p>
+
+<pre><code>  Usage: project-host [options] [command]
+
+
+  Commands:
+
+    load [options] [file]    Load given file into your system. file=.hostile
+    unload [options] [file]  Unload given file from your system. file=.hostile
+    *                        Help
+
+  Options:
+
+    -h, --help     output usage information
+    -V, --version  output the version number
+</code></pre>
+
+<p>Load file of entries</p>
+
+<pre><code>project-host load hostfile.txt
+</code></pre>
+
+<p>Unload file of entries</p>
+
+<pre><code>project-host unload hostfile.txt
+</code></pre>
+
+<h2>
+<a id="host-file" class="anchor" href="#host-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Host File</h2>
+
+<p>Add <code>.hostile</code> file at root folder of your project.</p>
+
+<pre><code># .hostile
+# npm i project-bin-host -g
+# project-host load
+
+4.4.4.4 dns1.google.com
+8.8.8.8 dns2.google.com
+
+xxx.xxx.xxx.xxx you.owndns.com
+</code></pre>
+
+<h5>
+<a id="windows" class="anchor" href="#windows" aria-hidden="true"><span class="octicon octicon-link"></span></a>Windows</h5>
+
+<p>Windows can t be automated using this software as it will throw an UAC query.</p>
+
+<p>The user must then click yes / no.</p>
+
+<p>If you d like to automate a process under windows that requires administrator privileges, </p>
+
+<p>please check</p>
+
+<pre><code>runas /profile /USERNAME:Administrator WHATVEVER.cmd
+</code></pre>
+
+<p>And <a href="https://github.com/feross/hostile">https://github.com/feross/hostile</a></p>
+
+<p>Note also that because of the clunky nature of the solution to trigger UAC, it is not possible to get standard input / output feed from rooted process.</p>
+
+<p>This means it is not possible to provide user feedback about command completion success or failure. : /</p>
+
+<h4>
+<a id="linux" class="anchor" href="#linux" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux</h4>
+
+<p>Please run the command with sudo.</p>
+
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tests</h2>
+
+<p>There are no tests as i don t know how to do with that UAC stuff.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Project-bin-host maintained by <a href="https://github.com/maboiteaspam">maboiteaspam</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
