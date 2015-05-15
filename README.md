@@ -30,8 +30,6 @@ Description
     -h, --help     output usage information
     -V, --version  output the version number
 
-
-
 ```
 
 Load file of entries
@@ -45,6 +43,19 @@ Unload file of entries
 project-host unload hostfile.txt
 ```
 
+
+##### Host File
+
+.hostile
+
+```
+# hostile file
+# npm i project-bin-host -g
+# project-host load
+
+4.4.4.4 dns1.google.com
+8.8.8.8 dns2.google.com
+```
 
 ##### Windows
 
